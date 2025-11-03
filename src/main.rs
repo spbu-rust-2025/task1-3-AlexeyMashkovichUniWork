@@ -7,7 +7,7 @@ fn main() -> io::Result<()> {
     let stdin = io::stdin();
     stdin.read_line(&mut buffer)?;
 
-    let file_open_result = File::open(buffer);
+    let file_open_result = File::open(buffer.trim());
     let mut file;
     match file_open_result {
         Err(_) => {
